@@ -101,16 +101,60 @@ const SocialLinks = () => {
         if (error) throw error;
 
         if (data) {
+          // Helper function to extract username from URL
+          const extractUsername = (url, platform) => {
+            if (!url) return '';
+            try {
+              if (platform === 'Instagram') {
+                // Extract from https://www.instagram.com/username/ or https://www.instagram.com/username
+                const match = url.match(/instagram\.com\/([^/?]+)/);
+                return match ? `@${match[1]}` : '';
+              } else if (platform === 'GitHub') {
+                // Extract from https://github.com/username
+                const match = url.match(/github\.com\/([^/?]+)/);
+                return match ? `@${match[1]}` : '';
+              } else if (platform === 'TikTok') {
+                // Extract from https://tiktok.com/@username or https://www.tiktok.com/@username
+                const match = url.match(/tiktok\.com\/@([^/?]+)/);
+                return match ? `@${match[1]}` : '';
+              }
+              return '';
+            } catch (e) {
+              return '';
+            }
+          };
+
           setSocialLinks(prev => prev.map(link => {
             switch (link.name) {
               case 'LinkedIn':
                 return data.linkedin_connect ? { ...link, url: data.linkedin_connect } : link;
               case 'Instagram':
-                return data.instagram_connect ? { ...link, url: data.instagram_connect } : link;
+                if (data.instagram_connect) {
+                  return {
+                    ...link,
+                    url: data.instagram_connect,
+                    subText: extractUsername(data.instagram_connect, 'Instagram')
+                  };
+                }
+                return link;
               case 'GitHub':
-                return data.github_connect ? { ...link, url: data.github_connect } : link;
+                if (data.github_connect) {
+                  return {
+                    ...link,
+                    url: data.github_connect,
+                    subText: extractUsername(data.github_connect, 'GitHub')
+                  };
+                }
+                return link;
               case 'TikTok':
-                return data.tiktok_connect ? { ...link, url: data.tiktok_connect } : link;
+                if (data.tiktok_connect) {
+                  return {
+                    ...link,
+                    url: data.tiktok_connect,
+                    subText: extractUsername(data.tiktok_connect, 'TikTok')
+                  };
+                }
+                return link;
               default:
                 return link;
             }
