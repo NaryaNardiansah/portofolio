@@ -14,16 +14,16 @@ const AdminProfile = () => {
     subtitle: 'Web Developer|Design|Video & Photo Editing|UI/UX Design',
     tech_stack: ['React', 'Javascript', 'Node.js', 'Tailwind'],
     github_url: 'https://github.com/NaryaNardiansah',
-    linkedin_url: 'https://www.linkedin.com/in/fazrilukman/',
+    linkedin_url: 'https://www.linkedin.com/in/naryan-nardiansah/',
     instagram_url: 'https://www.instagram.com/Anasera_.kaluna/?hl=id',
     name: 'Narya Nardiansah',
     description: 'Seorang lulusan Teknik Jaringan Komputer dan Telekomunikasi yang memiliki ketertarikan besar dalam pengembangan Front-End. Saya berfokus pada menciptakan pengalaman digital yang menarik dan selalu berusaha memberikan solusi terbaik dalam setiap proyek yang saya kerjakan.',
     cv_link: 'https://drive.google.com/drive/folders/1BOm51Grsabb3zj6Xk27K-iRwI1zITcpo',
     // Social links untuk Connect With Me
-    linkedin_connect: 'https://www.linkedin.com/in/fazrilukman/',
+    linkedin_connect: 'https://www.linkedin.com/in/naryan-nardiansah/',
     instagram_connect: 'https://www.instagram.com/Anasera_.kaluna/?hl=id',
     github_connect: 'https://github.com/NaryaNardiansah',
-    tiktok_connect: 'https://www.tiktok.com/@fazrilukman'
+    tiktok_connect: 'https://www.tiktok.com/@naryanardiansah'
   });
 
   useEffect(() => {

@@ -16,7 +16,7 @@ const SocialLinks = () => {
       displayName: "Let's Connect",
       subText: "on LinkedIn",
       icon: Linkedin,
-      url: "https://www.linkedin.com/in/fazrilukman/",
+      url: "https://www.linkedin.com/in/naryan-nardiansah/",
       color: "#0A66C2",
       gradient: "from-[#0A66C2] to-[#0077B5]",
       isPrimary: true,
@@ -24,9 +24,9 @@ const SocialLinks = () => {
     {
       name: "Instagram",
       displayName: "Instagram",
-      subText: "@fazrilukman_",
+      subText: "@Anasera_.kaluna",
       icon: Instagram,
-      url: "https://www.instagram.com/fazrilukman_/?hl=id",
+      url: "https://www.instagram.com/Anasera_.kaluna/?hl=id",
       color: "#E4405F",
       gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]",
     },
@@ -42,7 +42,7 @@ const SocialLinks = () => {
     {
       name: "TikTok",
       displayName: "Tiktok",
-      subText: "@fazrilukman",
+      subText: "@naryanardiansah",
       icon: ({ className, ...props }) => (
         <svg
           width="24px"
