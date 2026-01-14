@@ -35,15 +35,12 @@ const BackgroundEffect = () => (
     <div className="absolute inset-0 bg-[#140003]" />
     <div
       className="absolute inset-0 opacity-70"
-      style={{ background: "radial-gradient(circle at top, rgba(239,68,68,0.25), transparent 60%)" }}
+      style={{ background: "radial-gradient(circle at top, rgba(239,68,68,0.2), transparent 60%)" }}
     />
-    <div
-      className="absolute inset-0 opacity-50"
-      style={{ background: "radial-gradient(circle at bottom, rgba(244,63,94,0.2), transparent 60%)" }}
-    />
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(220,38,38,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(220,38,38,0.08)_1px,transparent_1px)] bg-[size:28px_28px] opacity-30" />
-    <div className="absolute -top-24 left-1/2 h-48 w-72 -translate-x-1/2 rounded-full bg-rose-500/20 blur-3xl animate-pulse" />
-    <div className="absolute -bottom-32 right-10 h-56 w-56 rounded-full bg-red-500/20 blur-3xl animate-float" />
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(220,38,38,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(220,38,38,0.05)_1px,transparent_1px)] bg-[size:28px_28px] opacity-20" />
+    {/* Hidden on mobile for performance */}
+    <div className="absolute -top-24 left-1/2 h-48 w-72 -translate-x-1/2 rounded-full bg-rose-500/10 blur-3xl animate-pulse hidden sm:block" />
+    <div className="absolute -bottom-32 right-10 h-56 w-56 rounded-full bg-red-500/10 blur-3xl animate-float hidden sm:block" />
   </div>
 );
 
