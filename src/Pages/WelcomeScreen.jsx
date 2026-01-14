@@ -90,10 +90,12 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
   const containerVariants = {
     exit: {
       opacity: 0,
-      scale: 1.05,
+      scale: 1.1,
+      filter: "blur(10px)",
       transition: {
-        duration: 0.5,
+        duration: 0.8,
         ease: "easeInOut",
+        when: "beforeChildren",
         staggerChildren: 0.1
       }
     }
