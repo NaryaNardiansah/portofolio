@@ -75,14 +75,16 @@ function TabPanel({ children, value, index, ...other }) {
   return (
     <div
       role="tabpanel"
-      style={{ display: value !== index ? 'none' : 'block' }}
+      hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      <Box sx={{ p: { xs: 1, sm: 3 } }}>
-        <Typography component="div">{children}</Typography>
-      </Box>
+      {value === index && (
+        <Box sx={{ p: { xs: 1, sm: 3 } }}>
+          <Typography component="div">{children}</Typography>
+        </Box>
+      )}
     </div>
   );
 }

@@ -21,10 +21,12 @@ body {
 }
 
 @keyframes blob {
+
 	0%,
 	100% {
 		transform: translateY(0);
 	}
+
 	50% {
 		transform: translateY(-20px);
 	}
@@ -43,12 +45,15 @@ body {
 		transform: translateY(-60%);
 		opacity: 0;
 	}
+
 	10% {
 		opacity: 0.35;
 	}
+
 	50% {
 		opacity: 0.55;
 	}
+
 	100% {
 		transform: translateY(160%);
 		opacity: 0;
@@ -68,67 +73,69 @@ body {
 	width: 8px;
 	height: 8px;
 	background-color: transparent;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
 	background: rgba(34, 6, 12, 0.5);
 	backdrop-filter: blur(8px);
 	-webkit-backdrop-filter: blur(8px);
 	border: 1px solid rgba(220, 38, 38, 0.1);
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
 	background: rgba(220, 38, 38, 0.4);
 	backdrop-filter: blur(4px);
 	-webkit-backdrop-filter: blur(4px);
 	border-radius: 20px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 
-	  inset 0 0 20px rgba(239, 68, 68, 0.3),
-	  0 0 10px rgba(220, 38, 38, 0.2);
+	box-shadow:
+		inset 0 0 20px rgba(239, 68, 68, 0.3),
+		0 0 10px rgba(220, 38, 38, 0.2);
 	transition: all 0.3s ease;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
 	background: rgba(220, 38, 38, 0.6);
 	border: 1px solid rgba(239, 68, 68, 0.4);
-	box-shadow: 
-	  inset 0 0 30px rgba(239, 68, 68, 0.4),
-	  0 0 15px rgba(220, 38, 38, 0.3);
-  }
-  
-  /* When scrollbar is in active/clicked state */
-  ::-webkit-scrollbar-thumb:active {
+	box-shadow:
+		inset 0 0 30px rgba(239, 68, 68, 0.4),
+		0 0 15px rgba(220, 38, 38, 0.3);
+}
+
+/* When scrollbar is in active/clicked state */
+::-webkit-scrollbar-thumb:active {
 	background: rgba(220, 38, 38, 0.7);
 	border: 1px solid rgba(239, 68, 68, 0.5);
-	box-shadow: 
-	  inset 0 0 40px rgba(239, 68, 68, 0.5),
-	  0 0 20px rgba(220, 38, 38, 0.4);
-  }
-  
-  ::-webkit-scrollbar-corner {
+	box-shadow:
+		inset 0 0 40px rgba(239, 68, 68, 0.5),
+		0 0 20px rgba(220, 38, 38, 0.4);
+}
+
+::-webkit-scrollbar-corner {
 	background: transparent;
-  }
+}
 
-  [data-aos] {
+[data-aos] {
 	will-change: transform, opacity !important;
-  }
+}
 
 
 
- @keyframes shine {
-  from {
-	     left: -100%;
-  }
-	  to {
-	    left: 200%;
-	   }
-	 }
-	 .animate-shine {
-   animation: shine 1.5s ease-in-out infinite;
- }
+@keyframes shine {
+	from {
+		left: -100%;
+	}
 
-  
+	to {
+		left: 200%;
+	}
+}
+
+.animate-shine {
+	animation: shine 1.5s ease-in-out infinite;
+}
+
+
 /*   @media (prefers-color-scheme: dark) {
 	::-webkit-scrollbar-track {
 	  background: rgba(3, 0, 20, 0.6);
@@ -209,18 +216,24 @@ body {
 
 /* Admin Panel Animations */
 @keyframes float {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translateY(0px);
 	}
+
 	50% {
 		transform: translateY(-20px);
 	}
 }
 
 @keyframes float-delayed {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translateY(0px);
 	}
+
 	50% {
 		transform: translateY(20px);
 	}
@@ -232,4 +245,48 @@ body {
 
 .animate-float-delayed {
 	animation: float-delayed 8s ease-in-out infinite;
+}
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+	* {
+		/* Disable backdrop-blur globally on mobile as it's very heavy */
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+		/* Reduce box-shadow complexity */
+		box-shadow: none !important;
+	}
+
+	/* Disable continuous heavy animations on mobile */
+	.animate-float,
+	.animate-float-delayed,
+	.animate-scanline,
+	.animate-shine,
+	.animate-blob,
+	.animate-blink {
+		animation: none !important;
+	}
+
+	/* Disable expensive filters */
+	.blur-2xl,
+	.blur-3xl {
+		filter: blur(10px) !important;
+	}
+
+	/* Simplify transitions */
+	* {
+		transition-duration: 200ms !important;
+		will-change: auto !important;
+	}
+
+	body {
+		overflow-x: hidden;
+		position: relative;
+	}
+
+	/* Specific overrides for Home page LaptopShowcase */
+	.animate-scanline,
+	.animate-[shine_6s_ease-in-out_infinite] {
+		display: none !important;
+	}
 }
