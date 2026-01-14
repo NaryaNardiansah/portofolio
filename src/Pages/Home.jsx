@@ -328,7 +328,7 @@ const Home = () => {
       AOS.init({
         once: true,
         offset: 10,
-        disable: window.innerWidth < 768, // Disable AOS on mobile for better performance
+        disable: window.innerWidth <= 1024, // Optimized: Disable on mobile/tablet for performance
       });
     };
 

@@ -140,7 +140,7 @@ export default function FullWidthTabs() {
     AOS.init({
       once: true,
       offset: 10,
-      disable: window.innerWidth < 768,
+      disable: window.innerWidth <= 1024,
     });
   }, []);
 
