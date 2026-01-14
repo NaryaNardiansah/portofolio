@@ -247,30 +247,17 @@ body {
 	animation: float-delayed 8s ease-in-out infinite;
 }
 
-/* Performance Optimization: Mobile vs Desktop/Mac */
-
-/* DESKTOP & MAC (High Performance Mode) */
-@media (min-width: 1025px) {
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
 	* {
-		/* Keep all rich effects on desktop */
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
-	}
-}
-
-/* MOBILE & TABLET (Lite Performance Mode) */
-@media (max-width: 1024px) {
-	* {
-		/* Disable power-hungry backdrop-blur on touch devices */
+		/* Disable backdrop-blur globally on mobile as it's very heavy */
 		backdrop-filter: none !important;
 		-webkit-backdrop-filter: none !important;
-
-		/* Simplify shadows: Remove heavy glows, keep subtle borders */
+		/* Reduce box-shadow complexity */
 		box-shadow: none !important;
-		text-shadow: none !important;
 	}
 
-	/* Disable continuous GPU-heavy animations */
+	/* Disable continuous heavy animations on mobile */
 	.animate-float,
 	.animate-float-delayed,
 	.animate-scanline,
@@ -280,22 +267,26 @@ body {
 		animation: none !important;
 	}
 
-	/* Reduce blur intensity for static elements */
+	/* Disable expensive filters */
 	.blur-2xl,
 	.blur-3xl {
-		filter: blur(15px) !important;
+		filter: blur(10px) !important;
 	}
 
-	/* Speed up transitions for a 'snappier' feel on mobile */
+	/* Simplify transitions */
 	* {
-		transition-duration: 150ms !important;
+		transition-duration: 200ms !important;
 		will-change: auto !important;
 	}
 
-	/* Simplify the background grid */
-	.bg-\[size\:24px_24px\] {
-		background-image: none !important;
-		/* Hide grid on mobile if it's lagging */
-		background-color: #140003;
+	body {
+		overflow-x: hidden;
+		position: relative;
+	}
+
+	/* Specific overrides for Home page LaptopShowcase */
+	.animate-scanline,
+	.animate-[shine_6s_ease-in-out_infinite] {
+		display: none !important;
 	}
 }

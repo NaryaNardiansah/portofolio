@@ -10,9 +10,9 @@ const AnimatedBackground = () => {
 	]
 
 	useEffect(() => {
-		if (window.innerWidth <= 1024) return; // Completely skip on mobile/tablet
-
 		const handleScroll = () => {
+			if (window.innerWidth < 768) return; // Disable scroll-linked animations on mobile for performance
+
 			const newScroll = window.pageYOffset;
 
 			blobRefs.current.forEach((blob, index) => {
