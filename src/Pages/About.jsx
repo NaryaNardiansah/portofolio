@@ -184,9 +184,7 @@ const AboutPage = () => {
   useEffect(() => {
     const initAOS = () => {
       AOS.init({
-        once: true,
-        offset: 10,
-        disable: window.innerWidth < 768,
+        once: false,
       });
     };
 

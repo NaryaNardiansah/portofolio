@@ -93,13 +93,13 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const LaptopShowcase = memo(() => (
   <div className="relative w-full max-w-[640px] sm:max-w-[720px] aspect-[4/3]">
     <div
-      className="absolute -inset-16 opacity-70 blur-3xl hidden sm:block"
+      className="absolute -inset-16 opacity-70 blur-3xl"
       style={{
         background: "radial-gradient(circle at top, rgba(244,63,94,0.35), transparent 60%)"
       }}
     />
     <div
-      className="absolute -inset-12 opacity-60 blur-3xl hidden sm:block"
+      className="absolute -inset-12 opacity-60 blur-3xl"
       style={{
         background: "radial-gradient(circle at bottom, rgba(239,68,68,0.25), transparent 60%)"
       }}
@@ -290,7 +290,7 @@ const Home = () => {
       AOS.init({
         once: true,
         offset: 10,
-        disable: window.innerWidth < 768, // Disable AOS on mobile for better performance
+
       });
     };
 
